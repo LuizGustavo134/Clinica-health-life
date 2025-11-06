@@ -1,20 +1,21 @@
 package model;
 
 public class Paciente {
-     private String nome_Paciente;
+     private String nome;
     private int idade;
-    private char tipo_sanguineo;
-    private char TS;
-    private float altura;
     private int cpf;
-    int telefone;
-    public Paciente() {
-        nome_Paciente = " ";
-        idade = 0;
-        tipo_sanguineo = ' ';
-        TS = ' ';
-        altura = 0;
-        cpf = 0;
-        telefone = 0;
+    private int sus;
+
+    public Paciente(String nome,int idade,int sus, int cpf) {
+        this.nome = nome;
+        this.idade = idade;
+        this.sus = sus;
+        this.cpf = cpf;
+
     }
+
+    public String getNome() { return nome; }
+    public int getIdade() { return idade; }
+    public int getSUS() { return sus; }
+    public int getCpf() { return cpf; }
 }
