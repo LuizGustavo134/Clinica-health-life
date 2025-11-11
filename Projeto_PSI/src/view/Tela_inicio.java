@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Tela_inicio {
+public class Tela_inicio extends JFrame {
     String UsuárioNome;
     String UsuárioSenha;
     JTextField Campo_nome;
@@ -40,18 +40,24 @@ public class Tela_inicio {
         JLabel Nome = new JLabel("Nome");
         Login.add(Nome);
         Nome.setBounds(670,235,80,25);
+
         Login.add(Campo_nome);
         Campo_nome.setBounds(590,270,200,16);
 
         JLabel Senha = new JLabel("Senha");
         Login.add(Senha);
         Senha.setBounds(670,300,80,25);
+
         Login.add(Campo_Senha);
         Campo_Senha.setBounds(590,345,200,16);
 
         JButton botao = new JButton("Entrar ");
         Login.add(botao);
-        botao.setBounds(645,400,80,25);
+        botao.setBounds(615,400,160,25);
+
+        JButton botao2 = new JButton("Não possui conta?");
+        botao2.setBounds(615,450,160,25);
+        Login.add(botao2);
 
         // simulando uma box shadow
         JPanel fundo = new JPanel();
@@ -71,6 +77,12 @@ public class Tela_inicio {
                 JOptionPane.showMessageDialog(Login,"Verificado sua integridade...");
             }
         });
+
+        botao2.addActionListener(e -> {
+            new Tela2();
+            dispose();
+        });
+
         Login.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //adiciona p botão para fechar
     }
 }
