@@ -10,14 +10,6 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class Tela_registro extends JFrame {
-    public class  Formulario {
-        ArrayList<String> Teste = new ArrayList<>();
-
-        public String Formulario(){
-            Teste = Teste;
-            return  Formulario();
-        }
-    }
     void Tela_de_cadastro(){
         // janela
         JFrame cadastro = new JFrame("Clínica health life");
@@ -94,6 +86,7 @@ public class Tela_registro extends JFrame {
                 int Idade = Integer.parseInt(Usuario_idade.getText());
                 int Sus = Integer.parseInt(Usuario_Sus.getText());
                 int Cpf = Integer.parseInt(Usuario_Cpf.getText());
+
                 Paciente paciente = new Paciente(Nome,Idade,Sus,Cpf);
                 Usuariodao dao = new Usuariodao();
                 dao.inserir(paciente);

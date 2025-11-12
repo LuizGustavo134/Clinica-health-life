@@ -1,0 +1,19 @@
+<dependencies>
+        <!-- MySQL Connector/J -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.33</version>
+        </dependency>
+    </dependencies>
+
+create database healthlife;
+use healthlife;
+CREATE TABLE Usuarios (
+  id mediumint(8) NOT NULL auto_increment,
+  nome varchar(100),
+  Idade int,
+  Sus int,
+  Cpf int,
+  PRIMARY KEY (id)
+) AUTO_INCREMENT=1;

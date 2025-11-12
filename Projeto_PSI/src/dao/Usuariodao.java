@@ -8,6 +8,7 @@ public class Usuariodao {
     public void inserir(Paciente paciente){
         String sql = "insert into usuarios (nome,idade,sus,cpf) VALUES (?,?,?,?)";
         try (Connection conn = Conexao.conectar();
+
         PreparedStatement stmt = conn.prepareStatement(sql)){
 
             stmt.setString(1,paciente.getNome());
