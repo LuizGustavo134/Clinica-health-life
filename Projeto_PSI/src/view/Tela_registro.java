@@ -2,7 +2,6 @@ package view;
 
 import dao.Usuariodao;
 import model.Paciente;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -78,23 +77,26 @@ public class Tela_registro extends JFrame {
         botao4.setBounds(630,500,120,25);
         cadastro.add(botao4);
 
+        // funcionalidade de cadastro
         botao4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-// problema do código abaixo
+
+
                 String Nome = Usuario_Nome.getText();
                 int Idade = Integer.parseInt(Usuario_idade.getText());
                 int Sus = Integer.parseInt(Usuario_Sus.getText());
                 int Cpf = Integer.parseInt(Usuario_Cpf.getText());
 
+
                 Paciente paciente = new Paciente(Nome,Idade,Sus,Cpf);
                 Usuariodao dao = new Usuariodao();
+                dao.limparTabela();
                 dao.inserir(paciente);
-                JOptionPane.showMessageDialog(null,"usuario salvo!");
+                dao.visualizar();
+               JOptionPane.showMessageDialog(null,"usuario salvo");
             }
         });
-
-
         // deixando a janela visivel
         cadastro.setVisible(true);
     }

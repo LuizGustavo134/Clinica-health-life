@@ -5,6 +5,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
+
 public class Tela_inicio extends JFrame {
     String UsuarioNome;
     String UsuarioSenha;
@@ -69,7 +71,6 @@ public class Tela_inicio extends JFrame {
         fundo2.setBounds(0,0,2000,2000);
         Login.add(fundo2);
 
-
         // evento de botão
         botao.addActionListener(new ActionListener() {
             @Override
@@ -77,8 +78,6 @@ public class Tela_inicio extends JFrame {
                 JOptionPane.showMessageDialog(Login,"Verificado Seus dados...");
             }
         });
-
-
         // abrindo a tela de registro
         botao2.addActionListener(new ActionListener() { // Novo botão
             @Override                                   //especificar o botão e a janela
@@ -87,6 +86,7 @@ public class Tela_inicio extends JFrame {
                Login.dispose(); // desativando a tela anterior
             }
         });
+
         Login.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //adiciona p botão para fechar
     }
 }

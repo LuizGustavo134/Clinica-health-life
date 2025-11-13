@@ -13,11 +13,11 @@ public class Conexao {
             String senha = ""; // sem espaço
 
             conexao = DriverManager.getConnection(url, usuario, senha);
-            System.out.println("✅ Conexão bem-sucedida!");
+            System.out.println("Conexão bem-sucedida!");
         } catch (ClassNotFoundException e) {
-            System.out.println("❌ Driver JDBC não encontrado!");
+            System.out.println(" Driver JDBC não encontrado!");
         } catch (SQLException e) {
-            System.out.println("❌ Erro de conexão: " + e.getMessage());
+            System.out.println(" Erro de conexão: " + e.getMessage());
         }
         return conexao;
     }
