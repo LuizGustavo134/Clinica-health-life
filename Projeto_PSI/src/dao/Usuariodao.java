@@ -20,39 +20,14 @@ public class Usuariodao {
             stmt.setInt(4, paciente.getCpf());
             stmt.executeUpdate();
 
-            System.out.println("Cadastro realizado com sucesso!"+ visualizar());
+            System.out.println("Cadastro realizado com sucesso!");
         } catch (SQLException e) {
             System.out.println("Erro ao cadastrar: " + e.getMessage());
         }
     }
 
-    public List<Paciente> visualizar() {
-        String sql = "SELECT * FROM usuarios";
-        List<Paciente> lista = new ArrayList<>();
-
-        try (Connection conn = Conexao.conectar();
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(sql)) {
-
-            while (rs.next()) {
-                Paciente p = new Paciente();
-                p.setNome(rs.getString("nome"));
-                p.setSus(rs.getInt("sus"));
-                p.setCpf(rs.getInt("cpf"));
-                p.setIdade(rs.getInt("idade"));
-                lista.add(p);
-                System.out.println(rs.getString("nome")+","+ rs.getString("idade"));
 
 
-
-            }
-            System.out.println(lista);
-        } catch (SQLException e) {
-            System.out.println("Erro ao consultar: " + e.getMessage());
-        }
-        return lista;
-
-    }
     public void limparTabela() {
         String sql = "DELETE FROM usuarios";
 

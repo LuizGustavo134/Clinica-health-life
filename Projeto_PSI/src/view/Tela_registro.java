@@ -91,9 +91,8 @@ public class Tela_registro extends JFrame {
 
                 Paciente paciente = new Paciente(Nome,Idade,Sus,Cpf);
                 Usuariodao dao = new Usuariodao();
-                dao.limparTabela();
+
                 dao.inserir(paciente);
-                dao.visualizar();
                JOptionPane.showMessageDialog(null,"usuario salvo");
             }
         });

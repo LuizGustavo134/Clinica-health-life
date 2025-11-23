@@ -8,21 +8,12 @@ public class Paciente {
 // para fazer consultas nunca esqueça o construtor vazio se não trava tudo
     public Paciente(){}
 
-    public Paciente(String nome,int idade,int sus, int cpf) {
+    public Paciente(String nome,int idade,int Sus, int cpf) {
         this.nome = nome;
         this.idade = idade;
         this.Sus = Sus;
         this.cpf = cpf;
 
-    }
-    @Override
-    public String toString() {
-        return "Paciente{" +
-                "nome='" + nome + '\'' +
-                ", idade=" + idade +
-                ", sus=" + Sus +
-                ", cpf=" + cpf +
-                '}';
     }
 
     public String getNome() { return nome; }
